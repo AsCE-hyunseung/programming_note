@@ -14,4 +14,4 @@ public class Solution4Test {
         String[] answer={"car","bed","sun"};
         assertArrayEquals(answer,solution.solution(strings,n));
     }
-}
+}  
