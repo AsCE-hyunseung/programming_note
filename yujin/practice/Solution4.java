@@ -1,5 +1,7 @@
 package practice;
 
+import java.util.Arrays;
+
 public class Solution4 {
     /*
     문자열로 구성된 리스트 strings와, 정수 n이 주어졌을 때,
@@ -18,11 +20,31 @@ public class Solution4 {
     strings                 n	    return
     [sun, bed, car]         1	    [car, bed, sun]
     [abce, abcd, cdx]       2	    [abcd, abce, cdx]
+
+    1. 각배열의 n추출
+    2. 배열의 n추출한 것으로 단어 정렬법 생각
+        2-1. n추출한것을 단어 앞에 가져다 붙여서 정렬하기
+    3. 가져다 붙여서 정렬된 것들 앞에 붙인것 다시 떼주기
     */
 
     public String[] solution(String[] strings, int n) {
-        String[] answer = {};
+        String[] answer = new String[strings.length];
+        int len = strings.length;
+
+        // length 코드리뷰 당한것 적용
+        for(int i=0;i<len;i++){
+            // substring 자르는 인덱스 관리에 주의 n,n쓰면 망한다
+            // 배웠던 것 다시 생각
+            answer[i] = strings[i].substring(n,n+1)+strings[i];
+        }
+
+        Arrays.sort(answer);
+
+        for(int i=0;i<len;i++){
+            // substring에 시작 인덱스만 정해줄 경우는 시작인덱스부터 뒤까지 모두 추출
+            answer[i] = answer[i].substring(1);
+        }
+
         return answer;   
     }
 }
-aasdasd
