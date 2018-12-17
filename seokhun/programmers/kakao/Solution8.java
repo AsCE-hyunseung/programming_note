@@ -30,16 +30,22 @@ public class Solution8 {
 
         int commandLength = commands.length;
         int answer[] = new int[commandLength];
-        int first = 0, middle = 0, end = 0;
 
         sort(array, commands, commandLength, answer);
         return answer;
     }
 
+    public static void main(String[] args) {
+        Solution8 s = new Solution8();
+        int[] arr = {1, 5, 2, 6, 3, 7, 4};
+        int[][] com = {{2, 5, 3}, {4, 4, 1}, {1, 7, 3}};
+        System.out.println(Arrays.toString(s.solution(arr, com)));
+    }
+
     private void sort(int[] array, int[][] commands, int commandLength, int[] answer) {
-        int first;
-        int middle;
-        int end;
+
+        int first = 0, middle = 0, end = 0;
+
         for (int i = 0; i < commandLength; i++) {
             first = commands[i][0];
             middle = commands[i][1];
@@ -47,20 +53,11 @@ public class Solution8 {
             int temp[] = new int[middle - first + 1];
 
             for (int z = first - 1; z < middle; z++) {
-                int a = 0;
-                temp[a++] = array[z];
+                temp[0] = array[z];
                 Arrays.sort(temp);
 
             }
             answer[i] = temp[end - 1];
         }
     }
-
-
-    /*public static void main(String[] args) {
-        Solution8 s = new Solution8();
-        int[] arr = {1, 5, 2, 6, 3, 7, 4};
-        int[][] com = {{2, 5, 3}, {4, 4, 1}, {1, 7, 3}};
-        System.out.println(Arrays.toString(s.solution(arr, com)));
-    }*/
 }
