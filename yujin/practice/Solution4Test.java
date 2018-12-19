@@ -12,6 +12,12 @@ public class Solution4Test {
         String[] strings={"sun","bed","car"};
         int n=1;
         String[] answer={"car","bed","sun"};
+
+        String[] strings2={"abce","abcd","cdx"};
+        int n2=2;
+        String[] answer2={"abcd","abce","cdx"};
+
         assertArrayEquals(answer,solution.solution(strings,n));
+        assertArrayEquals(answer2,solution.solution(strings2,n2));
     }
-}asdfasd
+}
