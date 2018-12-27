@@ -12,7 +12,7 @@ public class ReverseWord {
  
         return answer.substring(0,answer.length()-1);//맨 뒤의 공백 제거
     }
- 
+    //자른 단어를 역순으로 이어붙이는 메소드
     private String getAnswer(String answer, String[] splitWord) {
         for(int i=splitWord.length-1;i>=0;i--){//역순
             answer=answer.concat(splitWord[i]+" ");
