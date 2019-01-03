@@ -9,8 +9,8 @@ public class Solution6Test {
         Solution6 solution = new Solution6();
         int arr1[][]={{1,2},{2,3}};
         int arr2[][]={{3,4},{5,6}};
-        int Return[][]={{4,6},{7,9}};
-        assertArrayEquals(Return,solution.solution(arr1,arr2));
+        int arr3[][]={{4,6},{7,9}};
+        assertArrayEquals(arr3,solution.solution(arr1,arr2));
 
     }
 }
