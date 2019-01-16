@@ -1,5 +1,8 @@
 package practice;
 import java.util.Arrays;
+import java.util.Collections;
+
+import static java.util.Arrays.sort;
 
 public class Solution7 {
     /*
@@ -10,51 +13,24 @@ public class Solution7 {
 
     s	        return
     Zbcdefg	    gfedcbZ
-
-    1. 대문자와 소문자 분리
+    1. 대문자와 소문자 분리 -> 분리할 필요 없음
     2. 대문자와 소문자 각각 오름차순 정렬 -> sort이용
     3. reverse이용하여 뒤집은 후 대문자, 소문자 이어서 연결하기기
-
    */
     public String solution(String s) {
         String answer = "";
-        int count=0;
-        int count2=0;
-        int len = s.length();
+        // String 형을 배열에 어떻게 집어넣을지 몰라서
+        // 문제가 길어졌는데 split에 대해서 배웠다.
 
+        String[] arr = s.split("");
+        sort(arr);
 
-        for(int i=0;i<len;i++){
-            if (s.charAt(i)<=132){
-                count++;
-            }
-            else {
-                count2++;
-            }
-        }
-        char a[] = new char[count];
-        char b[] = new char[count2];
+        // reverse함수가 있다는것을 알았지만 list형 변환법을
+        // 모르고 있어서 식이 길어졌지만 배우게 되었다.
+        Collections.reverse(Arrays.asList(arr));
 
-        count=0;
-        count2=0;
+        answer = String.join("",arr);
+        return answer;
 
-        for(int i=0;i<len;i++){
-            if (s.charAt(i)<=132){
-                a[count]=s.charAt(i);
-                count++;
-            }
-            else {
-                b[count2]=s.charAt(i);
-                count2++;
-            }
-        }
-
-        Arrays.sort(a);
-        Arrays.sort(b);
-
-        String str1 = String.valueOf(a);
-        String str2 = String.valueOf(b);
-
-        answer=str1+str2;
-        return (new StringBuffer(answer)).reverse().toString();
     }
 }
