@@ -1,14 +1,13 @@
 package practice;
 
 import org.junit.Test;
+import static org.junit.Assert.*;
 
-import static org.junit.Assert.assertArrayEquals;
-
-public class Solution4Test {
+public class Solution8Test {
     @Test
-    public void 결과() {
+    public void Solution() {
         Solution8 s = new Solution8();
         assertTrue("true",s.solution("1234"));
-        assertFalse("false",s.solution("a123"));
+        assertFalse("false",s.solution("a234"));
     }
 }
