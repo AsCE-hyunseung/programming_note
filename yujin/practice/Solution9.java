@@ -11,9 +11,7 @@ public class Solution9 {
     */
     public String solution(String[] seoul) {
         int len =seoul.length;
-        int i;
-
-        i = isAnswer(seoul, len);
+        int i = isAnswer(seoul, len);
 
         return "김서방은 "+i+"에 있다";
     }
