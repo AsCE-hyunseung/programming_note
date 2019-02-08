@@ -4,12 +4,11 @@ import unittest
 def solution(arr):
     answer = []
 
+    answer.append(arr[0])
     for a in arr:
-        if not answer:
-            answer.append(a)
-            continue
         if answer[-1] != a:
             answer.append(a)
+
     return answer
 
 
