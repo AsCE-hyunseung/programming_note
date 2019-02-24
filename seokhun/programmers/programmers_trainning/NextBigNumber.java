@@ -3,16 +3,16 @@ public class NextBigNumber {
         int answer=0;
         String checkBinaryResult = checkBinary(inputNumber);
         // String binaryInputNumber = Integer.toBinaryString(inputNumber);
-        int count1 = countIntOne(checkBinaryResult);
+        int countOne = countIntOne(checkBinaryResult);
         while(true){
 
             int nextInputNumber = inputNumber + 1;
             String nextBinaryInputNumber = checkBinary(nextInputNumber);
 
-            int count2 = countIntOne(nextBinaryInputNumber);
+            int countTwo = countIntOne(nextBinaryInputNumber);
 
             //1의 개수 같으면 그 수가 정답
-            if(count1==count2){
+            if(countOne==countTwo){
                 answer =  nextInputNumber;
                 break;
 
@@ -43,7 +43,6 @@ public class NextBigNumber {
         return count;
     }
 }
-
 
 
 //위 문제는 효율성에서 실패
