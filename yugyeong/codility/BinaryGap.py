@@ -31,6 +31,7 @@ N is an integer within the range [1..2,147,483,647].
 
 import unittest
 
+
 def solution(N):
     zero_count = 0
     zero_max = 0
@@ -58,6 +59,7 @@ class Test(unittest.TestCase):
         self.assertEqual(5, solution(1041))
         self.assertEqual(0, solution(32))
         self.assertEqual(1, solution(20))
+
 
 if __name__ == '__main__':
     unittest.main()
